@@ -1,0 +1,20 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<meta charset="utf-8" />
+<title>Ajouter une Marque</title>
+</head>
+<body>
+<h:form>
+<h:outputLabel>Nom marque</h:outputLabel>
+<h:inputText value="#{gm.marque.nomMarque}"></h:inputText>
+<h:outputLabel>Date création</h:outputLabel>
+<h:inputText value="#{gm.marque.datecreation}"><f:convertDateTime pattern = "yyyy-MM-dd" /></h:inputText>
+<h:commandButton class="btn btn-primary" value="valider" action="#{gm.ajoutMarque()}"></h:commandButton>
+</h:form>
+</body>
+</html>

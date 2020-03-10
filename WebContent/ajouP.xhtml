@@ -1,0 +1,29 @@
+
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:f="http://java.sun.com/jsf/core"
+      xmlns:ui="http://java.sun.com/jsf/facelets"      
+      xmlns:h="http://java.sun.com/jsf/html">
+
+<head>
+<meta charset="utf-8" />
+<link href="bootstrap.min.css" rel="stylesheet"/>
+<title>Ajouter un produit</title>
+</head>
+<body>
+<h:form>
+<h:outputLabel>Nom Produit:</h:outputLabel>
+<h:inputText value="#{gp.produit.nom}"></h:inputText><BR />
+<h:outputLabel>desc Produit:</h:outputLabel>
+<h:inputText value="#{gp.produit.descr}"></h:inputText><BR />
+<h:outputLabel>prix Produit:</h:outputLabel>
+<h:inputText value="#{gp.produit.prix}"></h:inputText><BR />
+
+
+<h:selectOneMenu value="#{gp.marque.idMarque}">
+<f:selectItems value="#{gm.getMarquess()}" var="m" itemLabel="#{m.nomMarque}" itemValue="#{m.idMarque}"></f:selectItems>
+</h:selectOneMenu>
+<h:commandButton class="btn btn-primary" value="valider" action="#{gp.ajoutProduit()}"></h:commandButton>
+
+</h:form>
+</body>
+</html>
